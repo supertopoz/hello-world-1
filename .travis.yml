@@ -8,7 +8,7 @@ script:
 jobs:
   include:
     - stage: unit tests
-      script: "test"
+      script: "npm test"
     - stage: deploy to staging
       script: skip
       deploy: &heroku
