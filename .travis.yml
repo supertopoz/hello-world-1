@@ -1,0 +1,30 @@
+sudo: required
+services:
+- docker
+install:
+- docker build -t hello-world .
+script:
+- docker run -it -p 3000:3000 hello-world npm test
+# deploy:
+#   - provider: elasticbeanstalk
+#     access_key_id: ${AWS_ACCESS_KEY_ID}
+#     secret_access_key:
+#       secure: ${AWS_SECRET_ACCESS_KEY}
+#     region: us-east-1
+#     app: basket
+#     env: basket-stage
+#     bucket_name: elasticbeanstalk-us-east-1-767596259046
+#     on:
+#       branch: master
+#   - provider: elasticbeanstalk
+#     access_key_id: ${AWS_ACCESS_KEY_ID}
+#     secret_access_key:
+#       secure: ${AWS_SECRET_ACCESS_KEY}
+#     region: us-east-1
+#     app: basket
+#     env: basket-prod
+#     bucket_name: elasticbeanstalk-us-east-1-767596259046
+#     on:
+#       branch: production
+notifications:
+  slack: rpt-students:VNPivwk0lXHNWgImdYw6EzWW
