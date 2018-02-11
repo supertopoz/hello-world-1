@@ -21,6 +21,6 @@ it('adds a new gift to `state` when clicking the `add gift` button', () => {
 })
 
 it('renders a new gift to the dom',() => {
- 
+ //
 })
 
