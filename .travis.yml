@@ -5,6 +5,11 @@ install:
 - docker build -t hello-world .
 script:
 - docker run -it -p 3000:3000 hello-world npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: e07800ce-f28f-4c45-9b69-3e90beb2e4fd
+
 # deploy:
 #   - provider: elasticbeanstalk
 #     access_key_id: ${AWS_ACCESS_KEY_ID}
